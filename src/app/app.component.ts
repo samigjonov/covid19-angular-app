@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covid-dashboard';
-  totalCases = '94,433,200';
 }
