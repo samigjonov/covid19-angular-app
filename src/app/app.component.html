@@ -1,4 +1,90 @@
-<div class="alert alert-info">Info alert</div>
-<button type="button" class="btn btn-success">
-    Saqlash
-</button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <a class="navbar-brand" href="#">COVID19 Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Coronavirus <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="bg-light text-center p-3">
+                  Koronavirus bo'yicha statistika
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <p class="text-secondary text-center">
+                  Qayta yuklangan vaqti: January 1st
+              </p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col text-center">
+              <h2>Jami tasdiqlangan: </h2>
+              <h1>
+                  {{ totalCases }}
+              </h1>
+              <h2>Vafot etganlar: </h2>
+              <h1 class="text-danger">2,020,254</h1>
+              <h2>Tuzalganlar: </h2>
+              <h1 class="text-success">67,463,480</h1>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <h2>Davlatlar bo'yicha statistika: </h2>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Davlat</th>
+                    <th scope="col">Umumiy</th>
+                    <th scope="col">Yangi</th>
+                    <th scope="col">Umumiy vafot etganlar</th>
+                    <th scope="col">Yangi vafot etganlar</th>
+                    <th scope="col">Aktiv holatlar</th>
+                    <th scope="col">Umumiy tuzalganlar</th>
+                    <th scope="col">Jiddiy holatdagilar</th>
+                    <th scope="col">Umumiy / 1M aholi</th>
+                    <th scope="col">Vafot etganlar / 1M aholi</th>
+                    <th scope="col">Umumiy testlar</th>
+                    <th scope="col">Umumiy testlar / 1M aholi</th>
+                    <th scope="col">Aholi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>USA</td>
+                    <td>24,104,425</td>
+                    <td>+1,996</td>
+                    <td>401,868</td>
+                    <td>+12</td>
+                    <td>14,230,437</td>
+                    <td>9,472,120</td>
+                    <td>28,938</td>
+                    <td>72,592</td>
+                    <td>1,210</td>
+                    <td>281,813,206</td>
+                    <td>848,693</td>
+                    <td>332,055,650</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+  <footer class="bg-light text-center p-5">
+    <h3>Covid19 Dashboard</h3>
+    <a href="#">Covid19 veb sayt</a>
+  </footer>
