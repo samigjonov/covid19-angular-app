@@ -21,20 +21,22 @@
 </div>
 <!-- /Update time -->
 
+<!-- Test -->
+
 <!-- Main statistics -->
 <div class="row">
     <div class="col text-center">
         <h2>Jami tasdiqlangan: </h2>
         <h1 class="text-warning">
-            {{ totalCases }}
+            {{ totalCases | number }}
         </h1>
         <h2>Vafot etganlar: </h2>
         <h1 class="text-danger">
-            {{ totalDeath }}
+            {{ totalDeath  | number }}
         </h1>
         <h2>Tuzalganlar: </h2>
         <h1 class="text-success">
-            {{ totalRecovered }}
+            {{ totalRecovered  | number }}
         </h1>
     </div>
 </div>

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./countries-statistics.component.scss']
 })
 export class CountriesStatisticsComponent implements OnInit {
-
-  constructor() { }
+  countriesStatistics: any;
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.httpClient.get('https://disease.sh/v3/covid-19/countries').subscribe(data => {
+      this.countriesStatistics = data;
+    });
   }
 
 }

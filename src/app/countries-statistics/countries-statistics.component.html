@@ -22,21 +22,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>USA</td>
-              <td>24,104,425</td>
-              <td>+1,996</td>
-              <td>401,868</td>
-              <td>+12</td>
-              <td>14,230,437</td>
-              <td>9,472,120</td>
-              <td>28,938</td>
-              <td>72,592</td>
-              <td>1,210</td>
-              <td>281,813,206</td>
-              <td>848,693</td>
-              <td>332,055,650</td>
+            <tr *ngFor="let countryStatistic of countriesStatistics; let i = index;">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <a href="#">
+                  {{countryStatistic.country}}
+                </a>
+              </td>
+              <td>{{countryStatistic.cases | number }}</td>
+              <td [ngClass]="{'bg-warning': countryStatistic.todayCases > 0}">
+                {{
+                  countryStatistic.todayCases > 0 ? ('+' + countryStatistic.todayCases) : ''
+                }}
+              </td>
+              <td>{{countryStatistic.deaths | number }}</td>
+              <td [ngClass]="{'bg-danger': countryStatistic.todayDeaths > 0}">
+                {{countryStatistic.todayDeaths > 0 ? ('+' + countryStatistic.todayDeaths) : ''}}
+              </td>
+              <td>{{countryStatistic.active | number }}</td>
+              <td>{{countryStatistic.recovered | number }}</td>
+              <td>{{countryStatistic.critical | number }}</td>
+              <td>{{countryStatistic.casesPerOneMillion | number }}</td>
+              <td>{{countryStatistic.casesPerOneMillion | number }}</td>
+              <td>{{countryStatistic.tests | number }}</td>
+              <td>{{countryStatistic.testsPerOneMillion | number }}</td>
+              <td class="text-info">{{countryStatistic.population | number }}</td>
             </tr>
           </tbody>
         </table>
