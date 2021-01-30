@@ -1,3 +1,13 @@
+<!-- Search input -->
+<div class="input-group mb-3">
+  <input [(ngModel)]="keyword"
+         (ngModelChange)="onCountryFilter()"
+         type="text"
+         class="form-control" 
+         placeholder="Davlatni nomini kiriting">
+</div>
+<!-- /Search input -->
+
 <!-- Countries statistics -->
 <div class="row">
     <div class="col">
@@ -22,10 +32,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let countryStatistic of countriesStatistics; let i = index;">
-              <th scope="row">{{ i + 1 }}</th>
+            <tr *ngFor="let countryStatistic of countriesStatistics; let i = index;"
+                [ngClass]="{'bg-success text-light': countryStatistic.active == 0}">
+              <td scope="row">{{ i + 1 }}</td>
               <td>
-                <a href="#">
+                <a href="country/{{countryStatistic.countryInfo.iso3}}">
                   {{countryStatistic.country}}
                 </a>
               </td>
@@ -36,14 +47,14 @@
                 }}
               </td>
               <td>{{countryStatistic.deaths | number }}</td>
-              <td [ngClass]="{'bg-danger': countryStatistic.todayDeaths > 0}">
+              <td [ngClass]="{'bg-danger text-light': countryStatistic.todayDeaths > 0}">
                 {{countryStatistic.todayDeaths > 0 ? ('+' + countryStatistic.todayDeaths) : ''}}
               </td>
               <td>{{countryStatistic.active | number }}</td>
               <td>{{countryStatistic.recovered | number }}</td>
               <td>{{countryStatistic.critical | number }}</td>
               <td>{{countryStatistic.casesPerOneMillion | number }}</td>
-              <td>{{countryStatistic.casesPerOneMillion | number }}</td>
+              <td>{{countryStatistic.deathsPerOneMillion | number }}</td>
               <td>{{countryStatistic.tests | number }}</td>
               <td>{{countryStatistic.testsPerOneMillion | number }}</td>
               <td class="text-info">{{countryStatistic.population | number }}</td>
