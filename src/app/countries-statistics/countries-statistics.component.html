@@ -36,7 +36,7 @@
                 [ngClass]="{'bg-success text-light': countryStatistic.active == 0}">
               <td scope="row">{{ i + 1 }}</td>
               <td>
-                <a href="country/{{countryStatistic.countryInfo.iso3}}">
+                <a routerLink="country/{{countryStatistic.countryInfo.iso3}}">
                   {{countryStatistic.country}}
                 </a>
               </td>
